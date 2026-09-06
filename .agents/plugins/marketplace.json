@@ -9,12 +9,12 @@
       "source": {
         "source": "url",
         "url": "https://github.com/alo-exp/silver-bullet.git",
-        "ref": "v0.51.6",
+        "ref": "v0.51.7",
         "path": "plugins/silver-bullet",
         "sha": "6f453954c192dde27099d6c03738309a2f414320"
       },
       "description": "Agentic Process Orchestrator for AI-native Software Engineering & DevOps. SB's Codex package contains Silver Bullet-owned skills, hooks, templates, and lifecycle workflows.",
-      "version": "0.51.6",
+      "version": "0.51.7",
       "author": {
         "name": "Alo Labs",
         "email": "info@alolabs.dev"
