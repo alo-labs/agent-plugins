@@ -10,6 +10,26 @@
   },
   "plugins": [
     {
+      "name": "optimax",
+      "source": {
+        "source": "github",
+        "repo": "alo-exp/optimax",
+        "ref": "v0.1.0",
+        "sha": "54540db3ea74374677438995d9fce83b58e1441d"
+      },
+      "description": "Ālo Labs optimizes delegated model selection with independently assessed results.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Shafqat Ullah",
+        "url": "https://alolabs.dev"
+      },
+      "homepage": "https://optimax.alolabs.dev",
+      "repository": "https://github.com/alo-exp/optimax",
+      "license": "MIT",
+      "category": "development",
+      "strict": true
+    },
+    {
       "name": "silver-bullet",
       "source": {
         "source": "github",
