@@ -50,10 +50,18 @@ README.md
 
 ## Version sync
 
-Release bumps are pushed from the Silver Bullet source repo:
+Silver Bullet release bumps are pushed from the Silver Bullet source repo:
 
 ```bash
 scripts/sync-release-marketplace-versions.sh <version>
+```
+
+That script synchronizes Silver Bullet entries across the three hosts. For an Optimax release, update only the `optimax` entry in `.agents/plugins/marketplace.json` and `.claude-plugin/marketplace.json`: set `version` to the release version, `source.ref` to its `v<version>` tag, and `source.sha` to the full accepted upstream commit SHA. Preserve each host's source identity and all unrelated entries; Optimax has no Cursor catalog entry.
+
+Update the release constants in `tests/test_optimax_release.py` and run the offline catalog checks before publishing:
+
+```bash
+python3 -B -m unittest discover -s tests -p 'test_*.py' -v
 ```
 
 Legacy per-host repos (`alo-labs/claude-plugins`, `alo-labs/codex-plugins`, `alo-labs/alo-labs-cursor-marketplace`) redirect here during the transition window.
