@@ -6,8 +6,8 @@ import unittest
 
 
 ROOT = Path(__file__).resolve().parents[1]
-RELEASE_VERSION = "0.1.1"
-RELEASE_SHA = "b0e4e23b32c2faf89399cd3240f2da8b09baf4b6"
+RELEASE_VERSION = "0.2.0"
+RELEASE_SHA = "4a39c1e2740a9459f0c9777a5194f4da5cc797c3"
 HOSTS = (
     (".agents/plugins/marketplace.json", "alo-labs-codex",
      {"source": "url", "url": "https://github.com/alo-exp/optimax.git"}),
@@ -43,10 +43,13 @@ class OptimaxReleaseTests(unittest.TestCase):
 
     def test_advertised_version_and_ref_match_release(self):
         for path, marketplace_name, _ in HOSTS:
-            with self.subTest(host=marketplace_name):
-                _, plugin = self.load_optimax(path)
-                self.assertEqual(plugin["version"], RELEASE_VERSION)
-                self.assertEqual(plugin["source"]["ref"], f"v{RELEASE_VERSION}")
+            _, plugin = self.load_optimax(path)
+            for field, actual, expected in (
+                ("version", plugin["version"], RELEASE_VERSION),
+                ("ref", plugin["source"]["ref"], f"v{RELEASE_VERSION}"),
+            ):
+                with self.subTest(host=marketplace_name, field=field):
+                    self.assertEqual(actual, expected)
 
     def test_pins_are_full_accepted_release_revision(self):
         for path, marketplace_name, _ in HOSTS:

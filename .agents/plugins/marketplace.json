@@ -9,11 +9,11 @@
       "source": {
         "source": "url",
         "url": "https://github.com/alo-exp/optimax.git",
-        "ref": "v0.1.1",
-        "sha": "b0e4e23b32c2faf89399cd3240f2da8b09baf4b6"
+        "ref": "v0.2.0",
+        "sha": "4a39c1e2740a9459f0c9777a5194f4da5cc797c3"
       },
       "description": "Ālo Labs optimizes delegated model selection with independently assessed results.",
-      "version": "0.1.1",
+      "version": "0.2.0",
       "author": {
         "name": "Shafqat Ullah"
       },
